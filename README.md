@@ -11,7 +11,8 @@ Se poate emula aceeasi parte vizuala cu elemente diferite sau mai putine.
 O doua abordare ar fi, pentru functia de comparatie, in loc sa comparam cei 2 arbori, sa comparam matricea de pixeli a celor 2 pagini(sa fie facute screenshot-uri). Aceasta abordare desi pe langa faptul ca ar fi destul de ineficienta
 , dar usor de implementat, culorile ar impiedica o comparatie obiectiva corecta. Daca o pagina identica ar avea dark mode, faptul ca pixeli sunt flipped, ar rezulta o similaritate 0, desi pagina e identica.
 
-
+A treia abordare si aleasa ca solutie a fost sa folosesc K means clustering algorithm. Algoritmul foloseste o abordare nesupervizata.
+Algoritmul pe scurt, Fiecare fisier este parsat intr-un arbore, folosind libraria beatifulsoup. Apoi fiecare arbore este transformat intr-o valoare numerica(un numar natural), deoarece trebuie sa fie pozitionat pe axa 1D. Fiecare arbore reprezinta un punct pe axa. Generez k centroids(puncte random pe axa) initial, si caut care sunt punctele cele mai apropiate de fiecare centroid. Fiecare centroid reprezinta un cluster, si punctele cele mai apropiate de centroid fac parte din cluster. Se recalculeaza centroids ca fiind centrul punctelor din centroid-ul anterior. Se tot recalculeaza centroids pana cand am ajuns la o solutie, sau numarul de iteratii maxime a fost atins.
 
 
 
